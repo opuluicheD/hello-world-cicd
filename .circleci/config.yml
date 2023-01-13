@@ -38,23 +38,23 @@ jobs:
           name: "Say Hello to Chuks"
           command: "echo Print Hello, Chuks!"
 
-  save_hello:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-      - run: echo "Hello Chucks" > ~/output.txt
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - output.txt
+  # save_hello:
+  #   docker:
+  #     - image: circleci/node:13.8.0
+  #   steps:
+  #     - run: echo "Hello Chucks" > ~/output.txt
+  #     - persist_to_workspace:
+  #         root: ~/
+  #         paths:
+  #           - output.txt
   
-  print_output_file:
-    docker:
-      -image: circleci/node:13.8.0
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run: cat ~/output.txt
+  # print_output_file:
+  #   docker:
+  #     -image: circleci/node:13.8.0
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/
+  #     - run: cat ~/output.txt
   
   my_env_class:
     docker:
@@ -81,4 +81,6 @@ workflows:
       - my_env_class
       - save_hello
       - print_output_file
+          # requires:
+          #   - save_hello
       
