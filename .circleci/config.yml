@@ -80,4 +80,7 @@ workflows:
             - print_hello_to_me
       - my_env_class
       - save_hello
+      - print_output_file:
+          requires:
+            - save_hello
       
