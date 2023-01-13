@@ -41,9 +41,9 @@ jobs:
   save_hello:
     docker:
       - image: circleci/node:13.8.0
-      steps:
-        - run: echo "Hello Chucks" > ~/output.txt
-        persist_to_workspace:
+    steps:
+      - run: echo "Hello Chucks" > ~/output.txt
+      - persist_to_workspace:
           root: ~/
           paths:
             - output.txt
