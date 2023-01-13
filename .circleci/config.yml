@@ -18,7 +18,7 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
 
-  print-hello-to-me:
+  print_hello_to_me:
     docker:
        - image: cimg/base:stable
 
@@ -28,7 +28,7 @@ jobs:
           name: "Say Hello to"
           command: "echo Print Hello, World!"
 
-  print-hello-to-chuks:
+  print_hello_to_chuks:
     docker:
        - image: cimg/base:stable
 
