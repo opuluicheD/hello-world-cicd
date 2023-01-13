@@ -46,7 +46,7 @@ workflows:
     jobs:
       - say-hello
       - print-hello-to-me
-      - print-hello-to-chuks
+      - print-hello-to-chuks:
           requires:
             - print-hello-to-me
       
